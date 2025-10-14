@@ -27,6 +27,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
+      - name: Setup Backend
+        run: |
+          chmod +x ./create-backend.sh
+          ./create-backend.sh
+
       - name: Terraform Init
         working-directory: ${{ env.TERRAFORM_DIR }}
         run: terraform init -upgrade
@@ -37,7 +42,7 @@ jobs:
 
       - name: Terraform Apply
         working-directory: ${{ env.TERRAFORM_DIR }}
-        run: terraform destroy -auto-approve
+        run: terraform apply -auto-approve
         env:
           TF_VAR_key_name: ${{ secrets.KEY_NAME }}
        
