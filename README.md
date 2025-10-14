@@ -1,7 +1,7 @@
 # AWS High Availability & Monitoring Infrastructure
 
-This project demonstrates a **production-ready, highly available architecture on AWS** with automated monitoring using CloudWatch. It provisions scalable EC2 instances behind an Application Load Balancer (ALB), configures Auto Scaling Groups (ASG), and implements metrics-based alerts via CloudWatch and SNS.
-A key feature of this setup is that the AMI used for launching EC2 instances in the Auto Scaling Group is created from an existing main instance, ensuring that the application and configuration are consistent across all new instances.
+* This project demonstrates a **production-ready, highly available architecture on AWS** with automated monitoring using CloudWatch. It provisions scalable EC2 instances behind an Application Load Balancer (ALB), configures Auto Scaling Groups (ASG), and implements metrics-based alerts via CloudWatch and SNS.
+* A key feature of this setup is that the AMI used for launching EC2 instances in the Auto Scaling Group is created from an existing main instance, ensuring that the application and configuration are consistent across all new instances.
 ---
 
 ## 🔹 Project Highlights
