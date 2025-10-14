@@ -42,7 +42,7 @@ jobs:
 
       - name: Terraform Apply
         working-directory: ${{ env.TERRAFORM_DIR }}
-        run: terraform apply -auto-approve
+        run: terraform destroy -auto-approve
         env:
           TF_VAR_key_name: ${{ secrets.KEY_NAME }}
        
