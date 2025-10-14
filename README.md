@@ -1,7 +1,7 @@
 # AWS High Availability & Monitoring Infrastructure
 
 This project demonstrates a **production-ready, highly available architecture on AWS** with automated monitoring using CloudWatch. It provisions scalable EC2 instances behind an Application Load Balancer (ALB), configures Auto Scaling Groups (ASG), and implements metrics-based alerts via CloudWatch and SNS.
-
+A key feature of this setup is that the AMI used for launching EC2 instances in the Auto Scaling Group is created from an existing main instance, ensuring that the application and configuration are consistent across all new instances.
 ---
 
 ## 🔹 Project Highlights
@@ -11,6 +11,11 @@ This project demonstrates a **production-ready, highly available architecture on
   * Auto Scaling Group with minimum, desired, and maximum instance counts
   * Instances deployed across multiple subnets (private/public) for fault tolerance
   * Load balancing using Application Load Balancer (HTTP/HTTPS)
+
+* **AMI from Existing Instance**
+
+* Launches EC2 instances from a pre-configured AMI created from a main existing instance.
+* Ensures all instances have consistent configuration and installed software.
 
 * **Monitoring & Alerts:**
 
@@ -75,6 +80,7 @@ This project demonstrates a **production-ready, highly available architecture on
 
 * AWS CLI configured with proper credentials
 * Terraform >= 1.8.5
+* Existing EC2 instance to create AMI from.
 * GitHub Actions for CI/CD automation (optional)
 * SSH key for EC2 access
 
